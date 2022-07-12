@@ -1,6 +1,6 @@
 name: Create Release
 env:
-  DOCKER_IMAGE: wyrihaximusgithubactions/helm3
+  DOCKER_IMAGE: docker://ghcr.io/marfatech/helm3
   MILESTONE: ${{ github.event.milestone.title }}
 on:
   milestone:
