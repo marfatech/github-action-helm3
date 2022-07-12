@@ -52,7 +52,7 @@ jobs:
           echo -e "\r\nappVersion: v${GITHUB_REF##*/}\r\n" >> ./.helm/app/Chart.yaml &&
           cat ./.helm/app/Chart.yaml
       - name: Deploy
-        uses: WyriHaximus/github-action-helm3@v2
+        uses: marfatech/github-action-helm3@v2
         with:
           exec: helm upgrade APP_NAME ./.helm/app/ --install --wait --atomic --namespace=APP_NAMESPACE --set=app.name=APP_NAME --values=./.helm/app/values.yaml
           kubeconfig: '${{ secrets.KUBECONFIG }}'
